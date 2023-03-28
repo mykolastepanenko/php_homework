@@ -1,0 +1,6 @@
+.env
+
+/app/vendor
+/app/links.json
+
+/docker/logs

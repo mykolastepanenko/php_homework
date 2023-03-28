@@ -1,0 +1,17 @@
+{
+  "name": "mykola/homework",
+  "description": "Mykola's Hillel homeworks",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Mykola\\": "src/Mykola",
+      "UrlShortener\\": "src/Mykola/HW3/UrlShortener"
+    }
+  },
+  "authors": [
+    {
+      "name": "mykola.mykolai"
+    }
+  ],
+  "require": {}
+}
