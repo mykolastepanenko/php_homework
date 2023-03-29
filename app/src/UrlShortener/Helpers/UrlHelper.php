@@ -3,6 +3,7 @@
 namespace UrlShortener\Helpers;
 
 use UrlShortener\Exceptions\InvalidUrlStatusException;
+use GuzzleHttp\Client;
 
 class UrlHelper
 {
@@ -27,7 +28,7 @@ class UrlHelper
         if (!filter_var($url, FILTER_VALIDATE_URL))
             throw new \InvalidArgumentException('STRING "' . $url . '" IS NOT URL');
 
-        $code = self::getRequestCode($url);
+        $code = self::getRequestCodeGuzzle($url);
         $accessAbleCodeStatus = array_map('intval', explode(",", $_ENV["ACCESS_ABLE_URL_STATUS"]));
         $isAccess = in_array($code, $accessAbleCodeStatus);
 
@@ -48,6 +49,19 @@ class UrlHelper
         curl_close($curl);
 
         return curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    }
+
+    /**
+     * @param string $url
+     * @return int
+     */
+    protected static function getRequestCodeGuzzle(string $url): int
+    {
+        $client = new Client();
+
+        $response = $client->get($url);
+
+        return $response->getStatusCode();
     }
 
     /**
