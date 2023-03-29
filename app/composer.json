@@ -4,8 +4,7 @@
   "type": "project",
   "autoload": {
     "psr-4": {
-      "Mykola\\": "src/Mykola",
-      "UrlShortener\\": "src/Mykola/HW3/UrlShortener"
+      "UrlShortener\\": "src/UrlShortener"
     }
   },
   "authors": [

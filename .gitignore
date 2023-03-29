@@ -4,4 +4,6 @@
 /app/vendor
 /app/links.json
 
+/app/storage/links.json
+
 /docker/logs

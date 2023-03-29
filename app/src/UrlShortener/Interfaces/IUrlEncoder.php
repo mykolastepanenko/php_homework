@@ -1,10 +1,9 @@
 <?php
 
-namespace UrlShortener\UrlEncoder;
+namespace UrlShortener\Interfaces;
 
 interface IUrlEncoder
 {
-
     /**
      * @param string $url
      * @return string
