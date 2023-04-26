@@ -12,11 +12,10 @@ RUN pecl install xdebug \
         && echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/xdebug.ini \
         && echo "xdebug.discover_client_host=0" >> /usr/local/etc/php/conf.d/xdebug.ini \
         && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini \
-        && echo "xdebug.ide-key=docker" >> /usr/local/etc/php/conf.d/xdebug.ini
+        && echo "xdebug.ide_key=phpstorm" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 ENV TERM xterm-256color
-
-ENV PHP_IDE_CONFIG 'serverName=docker'
+ENV PHP_IDE_CONFIG 'serverName=phpstorm'
 
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
 

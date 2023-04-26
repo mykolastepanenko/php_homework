@@ -4,7 +4,9 @@
   "type": "project",
   "autoload": {
     "psr-4": {
-      "UrlShortener\\": "src/UrlShortener"
+      "UrlShortener\\": "src/UrlShortener",
+      "Container\\": "src/DIC/DIC/",
+      "AppDIC\\": "src/DIC/"
     }
   },
   "authors": [
@@ -15,6 +17,10 @@
   "require": {
     "monolog/monolog": "^3.3",
     "longman/telegram-bot": "^0.80.0",
-    "guzzlehttp/guzzle": "^7.0"
+    "guzzlehttp/guzzle": "^7.0",
+    "psr/container": "^2.0"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^6.2"
   }
 }
