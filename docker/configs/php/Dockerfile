@@ -14,6 +14,8 @@ RUN pecl install xdebug \
         && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini \
         && echo "xdebug.ide_key=phpstorm" >> /usr/local/etc/php/conf.d/xdebug.ini
 
+RUN docker-php-ext-install pdo pdo_mysql
+
 ENV TERM xterm-256color
 ENV PHP_IDE_CONFIG 'serverName=phpstorm'
 

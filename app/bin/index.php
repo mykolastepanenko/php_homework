@@ -2,12 +2,12 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use UrlShortener\UrlShortener;
-use UrlShortener\Repositories\FileRepository;
-use Monolog\Logger;
-use Monolog\Level;
-use Monolog\Handler\StreamHandler;
+use Components\UrlShortener\UrlShortener;
 use Monolog\Handler\FirePHPHandler;
+use Monolog\Handler\StreamHandler;
+use Monolog\Level;
+use Monolog\Logger;
+use Repositories\Classes\FileRepository;
 
 $url = 'https://jsonplaceholder.typicode.com/todos/1';
 //            $url = 'https://google.com';
