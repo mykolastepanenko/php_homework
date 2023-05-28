@@ -1,9 +1,9 @@
 server {
     listen 80;
-    index index.php index.html;
+    index index.php;
     error_log  /var/log/nginx/error.log;
     access_log /var/log/nginx/access.log;
-    root /var/www/public;
+    root /server/src/php/public;
     location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;

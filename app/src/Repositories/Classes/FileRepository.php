@@ -17,7 +17,7 @@ class FileRepository implements IRepository
 
     /**
      * @return array
-     * @throws \FileNotExistsException
+     * @throws FileNotExistsException
      */
     public function read(): array
     {

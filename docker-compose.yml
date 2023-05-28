@@ -39,6 +39,7 @@ services:
   nginx:
     container_name: ${PROJECT_NAME}_${NGINX_CONTAINER_NAME}
     image: nginx:latest
+    working_dir: /server/src/php
     restart: unless-stopped
     ports:
       - "80:80"
@@ -46,7 +47,7 @@ services:
     volumes:
       - ./docker/configs/nginx/conf.d:/etc/nginx/conf.d/default.conf
       - ./docker/logs/nginx:/var/log/nginx
-      - ./app/bin:/var/www/public
+      - ./app:/server/src/php
     networks:
       - app-network
 
